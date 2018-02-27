@@ -2,7 +2,7 @@ module.exports = function(robot) {
 
   let good = ['Excellent!', 'Superb!', 'Wonderful!']
 
-  let adorableDog = 'https://www.google.com/search?q=cute+dog+gif&safe=off&tbm=isch&source=iu&ictx=1&fir=IqszrIEKjJ4dkM%253A%252CZKKsn_Qyi5y2kM%252C_&usg=__21j8Sle96yvi0ZrX_zr_78zcs44%3D&sa=X&ved=0ahUKEwi3gu3WpMXZAhVRPsAKHb-vBO8Q9QEILzAC#imgrc=IqszrIEKjJ4dkM'
+  let adorableDog = 'https://media.giphy.com/media/7Jkv02RLFYj6M/giphy.gif'
 
   robot.hear(/niche/, function(msg) {
     msg.send('niche!!!!')
