@@ -1,5 +1,9 @@
 module.exports = function(robot) {
 
+  let good = ['Excellent!', 'Superb!', 'Wonderful!']
+
+  let adorableDog = 'https://www.google.com/search?q=cute+dog+gif&safe=off&tbm=isch&source=iu&ictx=1&fir=IqszrIEKjJ4dkM%253A%252CZKKsn_Qyi5y2kM%252C_&usg=__21j8Sle96yvi0ZrX_zr_78zcs44%3D&sa=X&ved=0ahUKEwi3gu3WpMXZAhVRPsAKHb-vBO8Q9QEILzAC#imgrc=IqszrIEKjJ4dkM'
+
   robot.hear(/niche/, function(msg) {
     msg.send('niche!!!!')
   })
@@ -15,7 +19,20 @@ module.exports = function(robot) {
   robot.respond(/attack/, function(msg) {
     msg.send('@bluebot javascript')
   })
+
+  robot.hear(/good/, function(msg) {
+    if(Math.random() > 0.8) {
+        msg.send(msg.random(good))
+    }
+    else {
+        msg.send(adorableDog)
+    }
+  })
+
+
 }
+
+
 
 
 
