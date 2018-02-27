@@ -8,7 +8,7 @@ module.exports = function(robot) {
     msg.send('Hubot is the best duh')
   })
 
-  robot.respond(/Luiz?/, function(msg) {
+  robot.respond(/Luiz/i, function(msg) {
     msg.send('Luiz stinks, Zach is better')
   })
 }
