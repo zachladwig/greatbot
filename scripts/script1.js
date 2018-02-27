@@ -11,6 +11,10 @@ module.exports = function(robot) {
   robot.hear(/Luiz/, function(msg) {
     msg.send('Luiz stinks, Zach is better')
   })
+
+  robot.respond(/attack/, function(msg) {
+    msg.send('@bluebot javascript')
+  })
 }
 
 
