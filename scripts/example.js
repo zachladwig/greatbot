@@ -36,6 +36,8 @@ module.exports = function(robot) {
     return res.send(res.random(lulz));
   });
 
+
+
   // robot.topic(function(res) {
   //   return res.send(res.message.text + "? That's a Paddlin'");
   // });
@@ -58,33 +60,33 @@ module.exports = function(robot) {
   //   return res.send(answer + ", but what is the question?");
   // });
 
-  // robot.respond(/you are a little slow/, function(res) {
-  //   return setTimeout(function() {
-  //     return res.send("Who you calling 'slow'?");
-  //   }, 60 * 1000);
-  // });
+  robot.respond(/you are a little slow/, function(res) {
+    return setTimeout(function() {
+      return res.send("Who you calling 'slow'?");
+    }, 60 * 1000);
+  });
 
-  // annoyIntervalId = null;
-  // robot.respond(/annoy me/, function(res) {
-  //   if (annoyIntervalId) {
-  //     res.send("AAAAAAAAAAAEEEEEEEEEEEEEEEEEEEEEEEEIIIIIIIIHHHHHHHHHH");
-  //     return;
-  //   }
-  //   res.send("Hey, want to hear the most annoying sound in the world?");
-  //   return annoyIntervalId = setInterval(function() {
-  //     return res.send("AAAAAAAAAAAEEEEEEEEEEEEEEEEEEEEEEEEIIIIIIIIHHHHHHHHHH");
-  //   }, 1000);
-  // });
+  annoyIntervalId = null;
+  robot.respond(/annoy me/, function(res) {
+    if (annoyIntervalId) {
+      res.send("AAAAAAAAAAAEEEEEEEEEEEEEEEEEEEEEEEEIIIIIIIIHHHHHHHHHH");
+      return;
+    }
+    res.send("Hey, want to hear the most annoying sound in the world?");
+    return annoyIntervalId = setInterval(function() {
+      return res.send("AAAAAAAAAAAEEEEEEEEEEEEEEEEEEEEEEEEIIIIIIIIHHHHHHHHHH");
+    }, 1000);
+  });
 
-  // robot.respond(/unannoy me/, function(res) {
-  //   if (annoyIntervalId) {
-  //     res.send("GUYS, GUYS, GUYS!");
-  //     clearInterval(annoyIntervalId);
-  //     return annoyIntervalId = null;
-  //   } else {
-  //     return res.send("Not annoying you right now, am I?");
-  //   }
-  // });
+  robot.respond(/unannoy me/, function(res) {
+    if (annoyIntervalId) {
+      res.send("GUYS, GUYS, GUYS!");
+      clearInterval(annoyIntervalId);
+      return annoyIntervalId = null;
+    } else {
+      return res.send("Not annoying you right now, am I?");
+    }
+  });
 
   // robot.router.post('/hubot/chatsecrets/:room', function(req, res) {
   //   let data, room, secret;
