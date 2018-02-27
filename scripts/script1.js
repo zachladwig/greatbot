@@ -7,7 +7,13 @@ module.exports = function(robot) {
   robot.respond(/who is the best?/, function(msg) {
     msg.send('Hubot is the best duh')
   })
+
+  robot.respond(/Luiz?/, function(msg) {
+    msg.send('Luiz stinks, Zach is better')
+  })
 }
+
+
 
 //
 //
