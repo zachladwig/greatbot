@@ -1,11 +1,14 @@
 const oneLinerJoke = require('one-liner-joke');
 const yoMamma = require('yo-mamma').default;
+const dogFacts = require('dog-facts');
+
 
 module.exports = function(robot) {
 
   let good = ['Excellent!', 'Superb!', 'Wonderful!']
-
   let adorableDog = 'https://media.giphy.com/media/7Jkv02RLFYj6M/giphy.gif'
+
+// here are a few lil functions to give us some random funny things
 
   robot.hear(/joke/, function(msg) {
     var getRandomJoke = oneLinerJoke.getRandomJoke();
@@ -13,45 +16,30 @@ module.exports = function(robot) {
     msg.send(jokeText)
   })
 
-  robot.hear(/yo mamma/, function(msg) {
+  robot.hear(/mom/, function(msg) {
     var insult = yoMamma();
     msg.send(insult);
   })
 
-  robot.hear(/niche/, function(msg) {
-    msg.send('niche!!!!')
+  robot.hear(/dog/, function(msg) {
+    let randomFact = dogFacts.random();
+    msg.send(randomFact)
   })
+
+  robot.hear(/dog picture/, function(msg) {
+    msg.send(adorableDog)
+  })
+
+  robot.respond(/are you there?/i, function(msg){
+    msg.reply('Yes, usually here, and listening.');
+  });
+
+
+  // And then hubot can respond if it hears a particular message
 
   robot.respond(/who is the best?/, function(msg) {
-    msg.send('Hubot is the best duh')
+    msg.reply('Hubot is the best duh')
   })
-
-  robot.hear(/Luiz/, function(msg) {
-    msg.send('Luiz stinks, Zach is better')
-  })
-
-  robot.respond(/attack/, function(msg) {
-    msg.send('@bluebot javascript')
-  })
-
-  robot.hear(/(good)+/, function(msg) {
-    if(Math.random() > 0.8) {
-        msg.send(msg.random(good))
-    }
-    else {
-        msg.send(adorableDog)
-    }
-  })
-
-  robot.hear(/\d+/, function(msg) {
-    msg.send('i love numbers too!')
-  })
-
-
-  robot.hear(/\bcat\b/, function(msg) {
-    msg.send('i love numbers too!')
-  })
-
 
 }
 
