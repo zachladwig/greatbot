@@ -1,4 +1,5 @@
 const oneLinerJoke = require('one-liner-joke');
+const yoMamma = require('yo-mamma').default;
 
 module.exports = function(robot) {
 
@@ -10,6 +11,11 @@ module.exports = function(robot) {
     var getRandomJoke = oneLinerJoke.getRandomJoke();
     var jokeText = getRandomJoke.body;
     msg.send(jokeText)
+  })
+
+  robot.hear(/yo mamma/, function(msg) {
+    var insult = yoMamma();
+    msg.send(insult);
   })
 
   robot.hear(/niche/, function(msg) {
