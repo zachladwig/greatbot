@@ -1,8 +1,16 @@
+const oneLinerJoke = require('one-liner-joke');
+
 module.exports = function(robot) {
 
   let good = ['Excellent!', 'Superb!', 'Wonderful!']
 
   let adorableDog = 'https://media.giphy.com/media/7Jkv02RLFYj6M/giphy.gif'
+
+  robot.hear(/joke/, function(msg) {
+    var getRandomJoke = oneLinerJoke.getRandomJoke();
+    var jokeText = getRandomJoke.body;
+    msg.send(jokeText)
+  })
 
   robot.hear(/niche/, function(msg) {
     msg.send('niche!!!!')
@@ -20,13 +28,22 @@ module.exports = function(robot) {
     msg.send('@bluebot javascript')
   })
 
-  robot.hear(/good/, function(msg) {
+  robot.hear(/(good)+/, function(msg) {
     if(Math.random() > 0.8) {
         msg.send(msg.random(good))
     }
     else {
         msg.send(adorableDog)
     }
+  })
+
+  robot.hear(/\d+/, function(msg) {
+    msg.send('i love numbers too!')
+  })
+
+
+  robot.hear(/\bcat\b/, function(msg) {
+    msg.send('i love numbers too!')
   })
 
 
