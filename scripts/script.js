@@ -40,7 +40,7 @@ module.exports = function(robot) {
     let text;
 
     if(random > 0.9) {
-      text ="https://media.giphy.com/media/3EfgWHj0YIDrW/giphy.gif"
+      text ="https://gph.is/1IH3RW6"
     }
     else {
       text = "https://media.giphy.com/media/GhnctUOrT8HBe/giphy.gif"
