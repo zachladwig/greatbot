@@ -7,6 +7,7 @@ module.exports = function(robot) {
 
   let good = ['Excellent!', 'Superb!', 'Wonderful!']
   let adorableDog = 'https://media.giphy.com/media/7Jkv02RLFYj6M/giphy.gif'
+  let partyTime = 'https://www.wcr.org/media/83d19a17-c3d9-43fe-9e8d-47b7175b25bcParty-Time1.png'
 
 // here are a few lil functions to give us some random funny things
 
@@ -32,6 +33,19 @@ module.exports = function(robot) {
 
   robot.respond(/are you there?/i, function(msg){
     msg.reply('Yes, usually here, and listening.');
+  });
+
+  robot.respond(/is it time to party?/i, function(msg){
+    let random = Math.random()
+    let text;
+
+    if(random > 0.9) {
+      text ="https://media.giphy.com/media/3EfgWHj0YIDrW/giphy.gif"
+    }
+    else {
+      text = "https://media.giphy.com/media/GhnctUOrT8HBe/giphy.gif"
+    }
+    msg.reply(text);
   });
 
 
